@@ -143,7 +143,7 @@ CREATE POLICY "Public reviews are viewable by everyone."
 ON reviews FOR SELECT 
 USING ( true );
 
--- Insert 정책: 로그인한 사용자가 리뷰 작성자인 경우만 추가 가능
+-- Insert 정책: 로그인한 사용자가 리뷰 작성자인 경우만 추가 가능  
 CREATE POLICY "Users can insert their own reviews." 
 ON reviews FOR INSERT 
 WITH CHECK ( auth.uid() = reviewer_id );
